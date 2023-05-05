@@ -114,12 +114,12 @@
 
         private void seances_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnlSeanse.Height = 710;
+            pnlSeanse.Height = 720;
         }
 
         private void btnSeanseAdd_Click(object sender, EventArgs e)
         {
-            pnlAddSeanse.Height = 710;
+            pnlAddSeanse.Height = 720;
         }
 
         private void close4_Click(object sender, EventArgs e)

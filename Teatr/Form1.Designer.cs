@@ -50,6 +50,10 @@
             button2 = new Button();
             textBox4 = new TextBox();
             panel4 = new Panel();
+            dataGridView2 = new DataGridView();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             close4 = new Button();
             panel2 = new Panel();
             seances = new ComboBox();
@@ -90,6 +94,8 @@
             pnlSeanse.SuspendLayout();
             pnlAddSeanse.SuspendLayout();
             panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel2.SuspendLayout();
             groupBox3.SuspendLayout();
             pnlMain.SuspendLayout();
@@ -195,13 +201,13 @@
             pnlSeanse.Dock = DockStyle.Top;
             pnlSeanse.Location = new Point(0, 1);
             pnlSeanse.Name = "pnlSeanse";
-            pnlSeanse.Size = new Size(752, 1);
+            pnlSeanse.Size = new Size(752, 400);
             pnlSeanse.TabIndex = 6;
             // 
             // close3
             // 
             close3.Dock = DockStyle.Bottom;
-            close3.Location = new Point(0, -28);
+            close3.Location = new Point(0, 370);
             close3.Name = "close3";
             close3.Size = new Size(750, 28);
             close3.TabIndex = 1;
@@ -237,7 +243,7 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(500, 0);
+            panel5.Size = new Size(320, 0);
             panel5.TabIndex = 12;
             // 
             // label3
@@ -246,7 +252,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(184, -200);
+            label3.Location = new Point(82, -186);
             label3.Name = "label3";
             label3.Size = new Size(162, 22);
             label3.TabIndex = 6;
@@ -257,7 +263,7 @@
             textBox1.Anchor = AnchorStyles.None;
             textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(118, -239);
+            textBox1.Location = new Point(16, -225);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Nom";
             textBox1.Size = new Size(286, 31);
@@ -268,7 +274,7 @@
             // 
             button3.Anchor = AnchorStyles.None;
             button3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(118, 49);
+            button3.Location = new Point(16, 63);
             button3.Name = "button3";
             button3.Size = new Size(286, 41);
             button3.TabIndex = 10;
@@ -280,7 +286,7 @@
             textBox2.Anchor = AnchorStyles.None;
             textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(118, -171);
+            textBox2.Location = new Point(16, -157);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "dd/mm/yyyy";
             textBox2.Size = new Size(286, 31);
@@ -291,7 +297,7 @@
             // 
             textBox5.Anchor = AnchorStyles.None;
             textBox5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(118, 16);
+            textBox5.Location = new Point(16, 30);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Izoh";
@@ -303,7 +309,7 @@
             textBox3.Anchor = AnchorStyles.None;
             textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(118, -120);
+            textBox3.Location = new Point(16, -106);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "hh:mm";
             textBox3.Size = new Size(286, 31);
@@ -314,7 +320,7 @@
             // 
             button2.Anchor = AnchorStyles.None;
             button2.FlatStyle = FlatStyle.Popup;
-            button2.Location = new Point(118, -28);
+            button2.Location = new Point(16, -14);
             button2.Name = "button2";
             button2.Size = new Size(286, 29);
             button2.TabIndex = 8;
@@ -326,7 +332,7 @@
             textBox4.Anchor = AnchorStyles.None;
             textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(118, -75);
+            textBox4.Location = new Point(16, -61);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Davomiyligi (soat)";
             textBox4.Size = new Size(286, 31);
@@ -335,11 +341,45 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(dataGridView2);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(500, 0);
+            panel4.Location = new Point(320, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(250, 0);
+            panel4.Size = new Size(430, 0);
             panel4.TabIndex = 11;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column4, Column5, Column6 });
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.Location = new Point(0, 0);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(430, 0);
+            dataGridView2.TabIndex = 0;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Sektor";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Qator";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Narx (UZS)";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 125;
             // 
             // close4
             // 
@@ -758,6 +798,8 @@
             pnlAddSeanse.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -826,5 +868,9 @@
         private TextBox textBox3;
         private Panel panel5;
         private Panel panel4;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
     }
 }
